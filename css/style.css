@@ -3,7 +3,7 @@
   --bg-dark: #0a0a0c;
   --human-glow: #ff5e97;
   --ai-neon: #00f0ff;
-  --lavender-glow: #bda2ff; /* New sophisticated lavender accent */
+  --lavender-glow: #bda2ff;
   --text-light: #f5f5f7;
   --text-muted: rgba(245, 245, 247, 0.6);
 }
@@ -30,16 +30,74 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle at 10% 20%, rgba(255, 94, 151, 0.08) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.06) 0%, transparent 45%);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 94, 151, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.06) 0%, transparent 45%);
   z-index: -1;
   pointer-events: none;
+}
+
+/* ── Navigation ── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 0;
+}
+
+.site-nav .nav-brand {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav .nav-brand:hover {
+  color: var(--lavender-glow);
+}
+
+.site-nav .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.site-nav .nav-links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.site-nav .nav-links a:hover,
+.site-nav .nav-links a.active {
+  color: var(--lavender-glow);
+}
+
+.site-nav .nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--lavender-glow);
+  opacity: 0.6;
 }
 
 /* Layout Container */
 .container {
   max-width: 700px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem 4rem;
 }
 
 /* Image Wrappers & Aspect Protection */
@@ -61,23 +119,23 @@ body {
 
 /* Typography & Main Landing Components */
 h1 {
-  font-size: 2.5rem;            /* Increased size for better presence */
-  font-weight: 800;            /* Extra bold for a cleaner geometric profile */
-  letter-spacing: 0.15em;      /* Swept out letter-spacing for a modern look */
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
   margin-bottom: 2rem;
   text-transform: uppercase;
   background: linear-gradient(135deg, var(--text-light) 0%, rgba(245, 245, 247, 0.7) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Subtle silver-white gradient */
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Clean separation from the glow background */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .badge {
   display: inline-block;
   padding: 6px 12px;
-  background: rgba(189, 162, 255, 0.1); /* Updated to lavender alpha */
-  border: 1px solid rgba(189, 162, 255, 0.2); /* Updated to lavender alpha */
-  color: var(--lavender-glow); /* Changed to lavender */
+  background: rgba(189, 162, 255, 0.1);
+  border: 1px solid rgba(189, 162, 255, 0.2);
+  color: var(--lavender-glow);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -87,4 +145,137 @@ h1 {
 
 .coming-soon {
   font-size: 1.1rem;
-  font-weight:
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.concept {
+  margin-top: 1.5rem;
+}
+
+.concept p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* ── Downloads Page ── */
+.flag-container {
+  margin-bottom: 2rem;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.flag-preview {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.download-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.download-list li a {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--lavender-glow);
+  text-decoration: none;
+  border: 1px solid rgba(189, 162, 255, 0.25);
+  border-radius: 4px;
+  background: rgba(189, 162, 255, 0.06);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.download-list li a:hover {
+  background: rgba(189, 162, 255, 0.15);
+  border-color: rgba(189, 162, 255, 0.5);
+  color: var(--text-light);
+}
+
+/* ── About Page ── */
+.about-body {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.about-body p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.about-sign-off {
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+/* ── Shared Footer Nav ── */
+.nav-footer {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-footer a {
+  color: var(--lavender-glow);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(189, 162, 255, 0.4);
+  transition: border-color 0.2s;
+}
+
+.nav-footer a:hover {
+  border-bottom-color: var(--lavender-glow);
+}
+
+/* ── Footer ── */
+.site-footer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(245, 245, 247, 0.25);
+  letter-spacing: 0.05em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .site-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .site-nav .nav-links {
+    gap: 1rem;
+  }
+
+  .download-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .download-list li a {
+    display: block;
+    text-align: center;
+  }
+}
