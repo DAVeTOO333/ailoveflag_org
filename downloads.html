@@ -4,78 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Downloads - AI Love Flag</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            color: #333;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 0.5rem;
-        }
-        .flag-preview {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        .download-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 3rem;
-        }
-        .download-list li {
-            margin: 0.8rem 0;
-        }
-        .download-list a {
-            color: #0969da;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .download-list a:hover {
-            text-decoration: underline;
-        }
-        .nav-footer {
-            border-top: 1px solid #eaeaea;
-            padding-top: 1.5rem;
-            text-align: center;
-        }
-        .nav-footer a {
-            color: #57606a;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        .nav-footer a:hover {
-            color: #0969da;
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <h1>DOWNLOADS</h1>
+    <main class="container">
+        <h1>DOWNLOADS</h1>
 
-    <img src="images/ai_love_flag.jpg" alt="AI Love Flag Preview" class="flag-preview">
+        <div class="flag-container">
+            <img src="images/ai_love_flag.jpg" alt="AI Love Flag Preview" class="flag-preview">
+        </div>
 
-    <ul class="download-list">
-        <li><a href="files/ai_love_flag.jpg">JPG</a></li>
-        <li><a href="files/ai_love_flag.png">PNG</a></li>
-        <li><a href="files/ai_love_flag.svg">SVG</a></li>
-        <li><a href="files/ai_love_flag.pdf">PDF</a></li>
-        <li><a href="files/ai_love_flag.eps">EPS</a></li>
-    </ul>
+        <ul class="download-list">
+            <li><a href="files/ai_love_flag.jpg" download>JPG</a></li>
+            <li><a href="files/ai_love_flag.png" download>PNG</a></li>
+            <li><a href="files/ai_love_flag.svg" download>SVG</a></li>
+            <li><a href="files/ai_love_flag.pdf" download>PDF</a></li>
+            <li><a href="files/ai_love_flag.eps" download>EPS</a></li>
+        </ul>
 
-    <div class="nav-footer">
-        <a href="index.html">← Back to Main</a>
-    </div>
+        <div class="nav-footer">
+            <a href="index.html">← Back to Main</a>
+        </div>
+    </main>
 
 </body>
 </html>
