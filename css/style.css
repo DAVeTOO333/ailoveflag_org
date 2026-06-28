@@ -1,0 +1,34 @@
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #ffffff;
+    --accent-glow: linear-gradient(135deg, #44095c 0%, #dfb0de 100%);
+    --ai-glow: #44095c;      /* Updated to your new primary dark purple */
+    --human-glow: #dfb0de;   /* Updated to your new primary light pink/lavender */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    z-index: 10;
+    padding: 40px 20px;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+.glow-bg {
+    position: absolute;
+    /* Include the rest of your .glow-bg properties here */
+}
