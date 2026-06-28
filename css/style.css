@@ -2,15 +2,16 @@
     --bg-color: #0a0a0a;
     --text-color: #ffffff;
     --accent-glow: linear-gradient(135deg, #44095c 0%, #dfb0de 100%);
-    --ai-glow: #44095c;      /* Updated to your new primary dark purple */
-    --human-glow: #dfb0de;   /* Updated to your new primary light pink/lavender */
+    --ai-glow: #44095c;      
+    --human-glow: #dfb0de;   
 }
 
+/* Prevent horizontal spilling and set base layout */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -18,17 +19,86 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
+/* Fixed container to prevent content blowout */
 .container {
     text-align: center;
     z-index: 10;
     padding: 40px 20px;
-    max-width: 800px;
+    width: 100%;
+    max-width: 600px; /* Constrains the entire layout width */
     box-sizing: border-box;
 }
 
+/* Constrain the flag image wrapper */
+.flag-wrapper {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 24px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(68, 9, 92, 0.3); /* Subtle dark purple glow */
+}
+
+/* CRITICAL: Prevents the image from breaking the layout */
+.flag-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Full screen ambient glow background */
 .glow-bg {
     position: absolute;
-    /* Include the rest of your .glow-bg properties here */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 50%, rgba(68, 9, 92, 0.15) 0%, rgba(223, 176, 222, 0.05) 50%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Badge and Typography styling */
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(223, 176, 222, 0.1);
+    border: 1px solid var(--human-glow);
+    color: var(--human-glow);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0 0 8px 0;
+    background: var(--accent-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.coming-soon {
+    font-size: 1.1rem;
+    color: var(--human-glow);
+    opacity: 0.8;
+    margin: 0 0 32px 0;
+    letter-spacing: 0.05em;
+}
+
+.concept {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.concept p {
+    margin: 12px 0;
 }
